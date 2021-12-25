@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>CNNs &#8212; DL_Notes  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to DL_Notes’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cnns">
+<h1>CNNs<a class="headerlink" href="#cnns" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vocab">
+<h2>Vocab<a class="headerlink" href="#vocab" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>spatial invariance - kernel applied at all locations</p></li>
+<li><p>translation invariance - kernel responds the same to the same patch regardless of location</p></li>
+<li><p>locality principle - early kernels only pay attention to very local areas</p></li>
+<li><p>cross correlation - operation of applying the kernel multiplication to each part of image</p></li>
+<li><p>convolution - cross correlation + added bias</p></li>
+<li><p>feature map - convolutional layer output</p></li>
+<li><p>receptive field - for some output element, its receptive field is all previous elements
+which have had an effect on its calculation. This is of interest since if an element’s receptive field
+is too small, it may not be able to say much about the image.</p></li>
+</ul>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What happens to the kernel when there are multiple input channels?</p>
+<ul>
+<li><p>The kernel becomes 3d and works the same!</p></li>
+</ul>
+</li>
+<li><p>What information is lost with convolutional layers?</p>
+<ul>
+<li><p>perimeter information!</p></li>
+</ul>
+</li>
+<li><p>Whats a solution for this?</p>
+<ul>
+<li><p>padding!</p></li>
+</ul>
+</li>
+<li><p>Why pool?</p>
+<ul>
+<li><p>mitigate convolution sensitivity? and spatially downsample</p></li>
+</ul>
+</li>
+<li><p>How does pooling work with multiple input channels?</p>
+<ul>
+<li><p>pools them each separately without adding across channels</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">DL_Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">MineRL Environments</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CNNs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vocab">Vocab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">Questions</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to DL_Notes’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Sander.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/CNNs.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
