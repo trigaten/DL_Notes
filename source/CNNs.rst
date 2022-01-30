@@ -39,3 +39,15 @@ Questions
 * How does pooling work with multiple input channels?
 
   * pools them each separately without adding across channels
+
+
+------------
+Strategies
+------------
+
+* Center pixels (subtract mean) - AlexNet, VGGNet
+* Construction
+  * conv layer with padding to maintain spatial res 
+  * nonlinearity
+  * pooling 
+* Use odd kernels and even padding

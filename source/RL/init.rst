@@ -1,0 +1,3 @@
+MDP process denoted as 
+
+S_0, A_0, R_1, S_1, A_1, R_2, ...

@@ -22,7 +22,8 @@ Indices and tables
 
 
 .. toctree::
-   :caption: MineRL Environments
-   :maxdepth: 2
+   :maxdepth: 3
 
    CNNs
+   activations
+   NLP/index
