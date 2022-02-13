@@ -1,0 +1,1 @@
+does weighted modify top and bottom prob calcs?

@@ -11,3 +11,5 @@ Yay!!!
    embeddings
 
    similarity
+
+   meta

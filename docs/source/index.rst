@@ -24,6 +24,6 @@ Indices and tables
 .. toctree::
    :maxdepth: 3
 
-   CNNs
-   activations
+   ML/index
    NLP/index
+   

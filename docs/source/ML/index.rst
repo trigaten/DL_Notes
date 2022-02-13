@@ -1,13 +1,11 @@
-.. NLP
+.. ML
 
-NLP
+ML
 ====================================
 
-Yay!!!
+
 
 .. toctree::
    :maxdepth: 1
 
-   embeddings
-
-   similarity
+   basic

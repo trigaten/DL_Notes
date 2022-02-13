@@ -182,13 +182,36 @@ However:
 
 Problems:
 
-*
+* Negative values unreliable
 
 PPMI
 ---------
 
 Just set < 0 values to 0
 
+Problems:
+
+* Biased towards infrequent events; infrequent events have very high PMIs
+
+Weighted PPMI
+------------------
+
+Modify probability of each word as:
+
+.. math::
+
+  P_a(i) = \frac{count(i)^a}{\text{# total words}^a}
+
+Effect: 
+* Smooths probability, so less super high vals
+
+Add k PPMI
+------------------
+
+Just add k to all counts
+
+Effect: 
+* Smooths probability, so less super high vals
 
 Excercises
 -------------
