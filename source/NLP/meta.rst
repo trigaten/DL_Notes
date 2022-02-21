@@ -34,3 +34,26 @@ Baselines for word sense prediction
 * Just predict word as most frequent sense 
 * Lesks Algorithm - check context and compare to different word sense definitions
 
+Closed vs Open vocab 
+-----------------------
+
+* Vocab called closed if entire vocab known
+
+Perplexity 
+-----------------------
+
+Intrinsic Performance measure used for language models 
+
+"inverse probability of test set normalized by # of words"
+
+"kind of like weighted branch factor of language"
+
+Should only be used to compare models which use the same vocab 
+
+Low Perplexity is good
+
+For a bigram model, can define as:
+
+.. math::
+
+    \text{PP(w)} = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{p(w_i | w_{i-1})}}

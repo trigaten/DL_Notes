@@ -21,8 +21,33 @@ Basic Terms
 
         Gain (data, a) = \text{Entropy(data}) - \sum_{\text{v = for each value of a}}^{} \frac{\text{size of v}}{\text{size of data}} * \text{Entropy(v)}
 
+* representation learning
+    Learning allgos that automatically learn useful feature representations
 
+* Accuracy 
+    (tp + tn) / (tp + tn + fp + fn)
+
+* precision 
+    % of predicted positives that are actually positive 
+
+* recall 
+    % of actual positives predicted to be positive
+
+* F-score 
+    weighted harmonic mean of precision, recall 
+
+    .. math::
+
+        \frac{1}
+        {(a)*\frac{1}{P} + (1-a)*\frac{1}{R}}
+
+* F1-score 
+    a = 0.5
+
+* bias 
+    Set of possible models with your configuration
 
 Excercises
 -------------
 * Derive entropy, information gain, compute on sample data
+* Derive F1 
