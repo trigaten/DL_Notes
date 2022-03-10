@@ -9,6 +9,8 @@ Yay!!!
    :maxdepth: 1
    
    embeddings
+   neural_embeddings
    similarity
    meta
    n-grams
+   evaluating_LMs

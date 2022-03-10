@@ -32,3 +32,4 @@ Keep all weights over time, then average them, then do single prediction
 Practice
 -----------
 * Derive convergence proof
+* Derive voted, average weighted formula

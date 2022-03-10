@@ -47,6 +47,12 @@ Basic Terms
 * bias 
     Set of possible models with your configuration
 
+* k-fold cross validation for hyperparam selection 
+    for each hyperparam combo, do k-fold cross val and get avg error to find which is best
+
+* the error can be decomposed into [estimation error] and (approximation) error. Error(f) = [error(f) - minposserror] + (minposserror)
+
+
 Excercises
 -------------
 * Derive entropy, information gain, compute on sample data

@@ -52,8 +52,27 @@ Should only be used to compare models which use the same vocab
 
 Low Perplexity is good
 
+Is 2 to the cross entropy
+
 For a bigram model, can define as:
 
 .. math::
 
     \text{PP(w)} = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{p(w_i | w_{i-1})}}
+
+Meta 
+-------
+
+* Distributional semantics 
+    define word meanings by context in which they occur
+
+* first order occurrences
+    words similar to words that occur near by them 
+
+* second order occurrence 
+    similar words have similar neighbors
+
+
+Excercises 
+-------------
+* derive perplexity cross entropy relationship

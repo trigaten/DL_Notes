@@ -16,3 +16,5 @@ ML
    loss 
    regularization
    other_algos
+   imbalanced_data
+   multiclass
