@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meta &#8212; DL Notes 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="N Grams" href="n-grams.html" />
+    <link rel="prev" title="Similarity Measures" href="similarity.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="meta">
+<h1>Meta<a class="headerlink" href="#meta" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="evaluating-similarity-measures">
+<h2>Evaluating similarity measures<a class="headerlink" href="#evaluating-similarity-measures" title="Permalink to this headline">¶</a></h2>
+<p>Extrinsic - plug into downstream system and see how well they perform</p>
+<p>Intrinsic - ask humans to evaluate</p>
+</div>
+<div class="section" id="inter-annotator-agreement">
+<h2>Inter annotator agreement<a class="headerlink" href="#inter-annotator-agreement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-probability">
+<h3>Basic probability<a class="headerlink" href="#basic-probability" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\text{P(label)} = \frac{\text{agree}}{\text{agree + disagree}}\]</div>
+</div>
+<div class="section" id="cohen-s-kappa">
+<h3>Cohen’s Kappa<a class="headerlink" href="#cohen-s-kappa" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{\text{P(a) - E[a]}}{1 - E[a]}\]</div>
+<p>Where P(a) is according to the annotators and E[a] is the probability
+of a having this label at random.</p>
+</div>
+</div>
+<div class="section" id="baselines-for-word-sense-prediction">
+<h2>Baselines for word sense prediction<a class="headerlink" href="#baselines-for-word-sense-prediction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Just predict word as most frequent sense</p></li>
+<li><p>Lesks Algorithm - check context and compare to different word sense definitions</p></li>
+</ul>
+</div>
+<div class="section" id="closed-vs-open-vocab">
+<h2>Closed vs Open vocab<a class="headerlink" href="#closed-vs-open-vocab" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Vocab called closed if entire vocab known</p></li>
+</ul>
+</div>
+<div class="section" id="perplexity">
+<h2>Perplexity<a class="headerlink" href="#perplexity" title="Permalink to this headline">¶</a></h2>
+<p>Intrinsic Performance measure used for language models</p>
+<p>“inverse probability of test set normalized by # of words”</p>
+<p>“kind of like weighted branch factor of language”</p>
+<p>Should only be used to compare models which use the same vocab</p>
+<p>Low Perplexity is good</p>
+<p>Is 2 to the cross entropy</p>
+<p>For a bigram model, can define as:</p>
+<div class="math notranslate nohighlight">
+\[\text{PP(w)} = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{p(w_i | w_{i-1})}}\]</div>
+</div>
+<div class="section" id="id1">
+<h2>Meta<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Distributional semantics</dt><dd><p>define word meanings by context in which they occur</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>first order occurrences</dt><dd><p>words similar to words that occur near by them</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>second order occurrence</dt><dd><p>similar words have similar neighbors</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>derive perplexity cross entropy relationship</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">DL Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ML/index.html">ML</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">NLP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="embeddings.html">Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural_embeddings.html">Neural Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity.html">Similarity Measures</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Meta</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#evaluating-similarity-measures">Evaluating similarity measures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inter-annotator-agreement">Inter annotator agreement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#baselines-for-word-sense-prediction">Baselines for word sense prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#closed-vs-open-vocab">Closed vs Open vocab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perplexity">Perplexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Meta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="n-grams.html">N Grams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluating_LMs.html">Evaluating LMs</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">NLP</a><ul>
+      <li>Previous: <a href="similarity.html" title="previous chapter">Similarity Measures</a></li>
+      <li>Next: <a href="n-grams.html" title="next chapter">N Grams</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;None.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/NLP/meta.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

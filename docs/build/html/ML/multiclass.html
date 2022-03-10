@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Multiclass &#8212; DL Notes 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NLP" href="../NLP/index.html" />
+    <link rel="prev" title="Imbalanced Data" href="imbalanced_data.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="multiclass">
+<h1>Multiclass<a class="headerlink" href="#multiclass" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ova-one-versus-all">
+<h2>OVA - one versus all<a class="headerlink" href="#ova-one-versus-all" title="Permalink to this headline">¶</a></h2>
+<p>If have k classes, train k classifiers, each of which predicts yes/no is the data
+point this class</p>
+</div>
+<div class="section" id="ava-all-versus-all">
+<h2>AVA - all versus all<a class="headerlink" href="#ava-all-versus-all" title="Permalink to this headline">¶</a></h2>
+<p>If have k classes, train k choose 2 classifiers, each of which says is it more one class or
+the other. Select class with most votes. Could also do binary tree.</p>
+</div>
+<div class="section" id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Derive OVA, AVA error bounds</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">DL Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ML</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Basic Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decision_trees.html">Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizers.html">Optimizers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural_nets.html">Neural Nets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loss.html">Loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regularization.html">Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other_algos.html">Other Algos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imbalanced_data.html">Imbalanced Data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multiclass</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ova-one-versus-all">OVA - one versus all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ava-all-versus-all">AVA - all versus all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../NLP/index.html">NLP</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">ML</a><ul>
+      <li>Previous: <a href="imbalanced_data.html" title="previous chapter">Imbalanced Data</a></li>
+      <li>Next: <a href="../NLP/index.html" title="next chapter">NLP</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;None.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/ML/multiclass.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

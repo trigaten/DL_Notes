@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>N Grams &#8212; DL Notes 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Evaluating LMs" href="evaluating_LMs.html" />
+    <link rel="prev" title="Meta" href="meta.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="n-grams">
+<h1>N Grams<a class="headerlink" href="#n-grams" title="Permalink to this headline">¶</a></h1>
+<p>Corpus:</p>
+<p>&lt;s&gt; I like peas &lt;/s&gt;</p>
+<p>&lt;s&gt; You like peas &lt;/s&gt;</p>
+<p>left: first word</p>
+<p>top: second word</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"></th>
+<th class="head"><p>&lt;s&gt;</p></th>
+<th class="head"><p>I</p></th>
+<th class="head"><p>like</p></th>
+<th class="head"><p>peas</p></th>
+<th class="head"><p>You</p></th>
+<th class="head"><p>&lt;/s&gt;</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>&lt;s&gt;</p></th>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>I</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>like</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>peas</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>You</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Probabilities (divide each element by sum of row)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"></th>
+<th class="head"><p>&lt;s&gt;</p></th>
+<th class="head"><p>I</p></th>
+<th class="head"><p>like</p></th>
+<th class="head"><p>peas</p></th>
+<th class="head"><p>You</p></th>
+<th class="head"><p>&lt;/s&gt;</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>&lt;s&gt;</p></th>
+<td><p>0</p></td>
+<td><p>1/2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1/2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>I</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>like</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>peas</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>You</p></th>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Probability of I like peas =</p>
+<p>P(I | &lt;s&gt;) * P(like | I) * P(peas | like) * P(&lt;/s&gt; | peas)</p>
+<p>= 0.5 * 1 * 1 * 1 = 0.5</p>
+<p>Generally express with logs, log(0.5)</p>
+<div class="section" id="smoothing">
+<h2>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this headline">¶</a></h2>
+<p>Having 0 probabilities for some n-grams is bad as they could make the test set occur with 0 probability</p>
+<p>Lets smooth those probabilities!</p>
+<div class="section" id="laplace-smoothing">
+<h3>Laplace Smoothing<a class="headerlink" href="#laplace-smoothing" title="Permalink to this headline">¶</a></h3>
+<p>Add 1 or k to every probability cell</p>
+<p>Bigrams:</p>
+<div class="math notranslate nohighlight">
+\[P_{add_k}(w_i | w_{i-1}) = \frac{Count(w_{n-1} w_n) + k}{Count(W_{n-1}) + V}\]</div>
+</div>
+<div class="section" id="recover-adjusted-counts">
+<h3>Recover adjusted counts<a class="headerlink" href="#recover-adjusted-counts" title="Permalink to this headline">¶</a></h3>
+<p>We just modified the probability distribution. What does this say about the actual counts of each n gram?</p>
+<p>Recover counts by multiplying by sum of row.</p>
+</div>
+</div>
+<div class="section" id="backoff">
+<h2>Backoff<a class="headerlink" href="#backoff" title="Permalink to this headline">¶</a></h2>
+<p>If trigram doesn’t exist, use bigrams, if they don’t exist, unigrams, etc.</p>
+<div class="section" id="stupid-backoff">
+<h3>Stupid backoff<a class="headerlink" href="#stupid-backoff" title="Permalink to this headline">¶</a></h3>
+<p>Just backs off and keeps multiplying by 0.4</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">DL Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ML/index.html">ML</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">NLP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="embeddings.html">Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural_embeddings.html">Neural Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity.html">Similarity Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta.html">Meta</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">N Grams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#smoothing">Smoothing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backoff">Backoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="evaluating_LMs.html">Evaluating LMs</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">NLP</a><ul>
+      <li>Previous: <a href="meta.html" title="previous chapter">Meta</a></li>
+      <li>Next: <a href="evaluating_LMs.html" title="next chapter">Evaluating LMs</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;None.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/NLP/n-grams.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

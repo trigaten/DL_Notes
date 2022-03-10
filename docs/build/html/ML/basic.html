@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Basic Terms &#8212; DL Notes 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Decision Trees" href="decision_trees.html" />
+    <link rel="prev" title="ML" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="basic-terms">
+<h1>Basic Terms<a class="headerlink" href="#basic-terms" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><dl class="simple">
+<dt>normalization</dt><dd><ul class="simple">
+<li><p>scale values into [0,1]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>standardization</dt><dd><ul class="simple">
+<li><p>mean 0 std 1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>inductive bias</dt><dd><ul class="simple">
+<li><p>certain assumptions the model makes like “the decision boundary is linear”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Entropy</dt><dd><p>measures expected amount of information (in bits) needed to represent an event.
+For example, the result of flipping a fair coin can be encoded with a single bit (i.e. -log_2 (0.50)).
+We only expect to do this 50% of the time, so the entropy of this event would be -log_2 (0.50) * 0.50
+AKA the average amount of bits needed to encode the info.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Information gain</dt><dd><p>Expected reduction in entropy caused by partitioning on an attribute, a, which could be “weather”</p>
+<p>High gain means high reduction in entropy</p>
+<div class="math notranslate nohighlight">
+\[Gain (data, a) = \text{Entropy(data}) - \sum_{\text{v = for each value of a}}^{} \frac{\text{size of v}}{\text{size of data}} * \text{Entropy(v)}\]</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>representation learning</dt><dd><p>Learning allgos that automatically learn useful feature representations</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Accuracy</dt><dd><p>(tp + tn) / (tp + tn + fp + fn)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>precision</dt><dd><p>% of predicted positives that are actually positive</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>recall</dt><dd><p>% of actual positives predicted to be positive</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>F-score</dt><dd><p>weighted harmonic mean of precision, recall</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}
+{(a)*\frac{1}{P} + (1-a)*\frac{1}{R}}\]</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>F1-score</dt><dd><p>a = 0.5</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>bias</dt><dd><p>Set of possible models with your configuration</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>k-fold cross validation for hyperparam selection</dt><dd><p>for each hyperparam combo, do k-fold cross val and get avg error to find which is best</p>
+</dd>
+</dl>
+</li>
+<li><p>the error can be decomposed into [estimation error] and (approximation) error. Error(f) = [error(f) - minposserror] + (minposserror)</p></li>
+</ul>
+<div class="section" id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Derive entropy, information gain, compute on sample data</p></li>
+<li><p>Derive F1</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">DL Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ML</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="decision_trees.html">Decision Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizers.html">Optimizers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural_nets.html">Neural Nets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loss.html">Loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regularization.html">Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other_algos.html">Other Algos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imbalanced_data.html">Imbalanced Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiclass.html">Multiclass</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../NLP/index.html">NLP</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">ML</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">ML</a></li>
+      <li>Next: <a href="decision_trees.html" title="next chapter">Decision Trees</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;None.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/ML/basic.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
