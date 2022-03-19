@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'DL_Notes'
+project = 'ML/DL Notes'
 copyright = '2022, Sander Schullhoff'
 author = 'Sander Schulhoff'
 
