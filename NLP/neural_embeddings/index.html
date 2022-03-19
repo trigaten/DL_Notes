@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Neural Embeddings &#8212; DL_Notes 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Similarity Measures" href="../similarity/" />
+    <link rel="prev" title="Embeddings" href="../embeddings/" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="neural-embeddings">
+<h1>Neural Embeddings<a class="headerlink" href="#neural-embeddings" title="Permalink to this headline">¶</a></h1>
+<p>More efficient than neural LM since no big softmax</p>
+<section id="skip-gram-with-negative-sampling">
+<h2>Skip gram with negative sampling<a class="headerlink" href="#skip-gram-with-negative-sampling" title="Permalink to this headline">¶</a></h2>
+<p>self supervised method trains a binary classifier.</p>
+<p>Uses target, context pairs as positive examples and target, random word pairs as negative examples</p>
+<p>Separate vectors are trained for context and target words.</p>
+<p>Similarity is computed by multiplying c * w</p>
+<section id="weighted-unigram-sampling">
+<h3>Weighted unigram sampling<a class="headerlink" href="#weighted-unigram-sampling" title="Permalink to this headline">¶</a></h3>
+<p>Smooth probabilities when selecting random words using:</p>
+<div class="math notranslate nohighlight">
+\[p_a(w) = \frac{count(w)^a}{\sum_{w'}count(w')^a}\]</div>
+</section>
+</section>
+<section id="fasttext">
+<h2>Fasttext<a class="headerlink" href="#fasttext" title="Permalink to this headline">¶</a></h2>
+<p>Different neural embedding method that represents words as theirselves + subwords (as n-grams)</p>
+<p>e.g. where -&gt; [&lt;wh, whe, her, ere, re&gt;]</p>
+</section>
+<section id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Derive skipgram loss</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../">DL_Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../ML/">ML</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">NLP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../embeddings/">Embeddings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Neural Embeddings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#skip-gram-with-negative-sampling">Skip gram with negative sampling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fasttext">Fasttext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../similarity/">Similarity Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meta/">Meta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n-grams/">N Grams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluating_LMs/">Evaluating LMs</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../">Documentation overview</a><ul>
+  <li><a href="../">NLP</a><ul>
+      <li>Previous: <a href="../embeddings/" title="previous chapter">Embeddings</a></li>
+      <li>Next: <a href="../similarity/" title="next chapter">Similarity Measures</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Sander Schullhoff.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/NLP/neural_embeddings.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

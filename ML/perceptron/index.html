@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Perceptron &#8212; DL_Notes 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Optimizers" href="../optimizers/" />
+    <link rel="prev" title="Decision Trees" href="../decision_trees/" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="perceptron">
+<h1>Perceptron<a class="headerlink" href="#perceptron" title="Permalink to this headline">¶</a></h1>
+<p>Gradient-free linear model training</p>
+<p>Each example is feature weights, label -1 or +1</p>
+<p>Model contains linear weights, bias</p>
+<p>If the model predicts correctly, nothing happens</p>
+<p>Else, add/sub feature vector from weights and add/sub 1 from bias depending on label</p>
+<ul class="simple">
+<li><p>The margin is the distance between the hyperplane and the closest point to it</p></li>
+</ul>
+<section id="voted-perceptron">
+<h2>Voted perceptron<a class="headerlink" href="#voted-perceptron" title="Permalink to this headline">¶</a></h2>
+<p>Keep all weights over time, at prediction step, make all predict then take average vote</p>
+<section id="problems">
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h3>
+<p>Computationally intensive</p>
+</section>
+</section>
+<section id="average-weighted-perceptron">
+<h2>Average weighted perceptron<a class="headerlink" href="#average-weighted-perceptron" title="Permalink to this headline">¶</a></h2>
+<p>Keep all weights over time, then average them, then do single prediction</p>
+</section>
+<section id="perceptron-proof">
+<h2>Perceptron proof<a class="headerlink" href="#perceptron-proof" title="Permalink to this headline">¶</a></h2>
+<section id="inspiration">
+<h3>Inspiration<a class="headerlink" href="#inspiration" title="Permalink to this headline">¶</a></h3>
+<p>Every time we update the perceptron weights from <span class="math notranslate nohighlight">\(w_k\)</span> to <span class="math notranslate nohighlight">\(w_{k+1}\)</span>,
+we want make sure that <span class="math notranslate nohighlight">\(w_{k+1}\)</span> and <span class="math notranslate nohighlight">\(w_*\)</span> become more similar. We
+measure this in 2 ways:</p>
+<ol class="arabic simple">
+<li><p>Ensure <span class="math notranslate nohighlight">\(w_{k+1} * w_*\)</span> grows at each iteration</p></li>
+<li><p>Ensure that <span class="math notranslate nohighlight">\(w_{k+1} * w_*\)</span> grows faster than <span class="math notranslate nohighlight">\(||w_k||^2\)</span></p></li>
+</ol>
+</section>
+<section id="demonstrating-that-w-k-1-w-grows-at-each-iteration">
+<h3>Demonstrating that <span class="math notranslate nohighlight">\(w_{k+1} * w_*\)</span> grows at each iteration<a class="headerlink" href="#demonstrating-that-w-k-1-w-grows-at-each-iteration" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}w_{k+1} = w_k + y*x\\\text{multiply both sides by } w_*\\w_* * w_{k+1} = w_* * (w_k + yx)\\w_* * w_{k+1} = w_* w_k + w_* * yx\\\text{Recall the definition of the margin: }\\\gamma = \sup_{(x, y)}()\end{aligned}\end{align} \]</div>
+</section>
+</section>
+<section id="practice">
+<h2>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Derive convergence proof</p></li>
+<li><p>Derive voted, average weighted formula</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../">DL_Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">ML</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basic/">Basic Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../decision_trees/">Decision Trees</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Perceptron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#voted-perceptron">Voted perceptron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#average-weighted-perceptron">Average weighted perceptron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perceptron-proof">Perceptron proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practice">Practice</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../optimizers/">Optimizers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neural_nets/">Neural Nets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loss/">Loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regularization/">Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../other_algos/">Other Algos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imbalanced_data/">Imbalanced Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiclass/">Multiclass</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../NLP/">NLP</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../">Documentation overview</a><ul>
+  <li><a href="../">ML</a><ul>
+      <li>Previous: <a href="../decision_trees/" title="previous chapter">Decision Trees</a></li>
+      <li>Next: <a href="../optimizers/" title="next chapter">Optimizers</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Sander Schullhoff.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/ML/perceptron.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
