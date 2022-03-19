@@ -36,6 +36,8 @@ extensions = [
     'sphinx.ext.githubpages',
 ]
 
+html_theme = 'sphinx_book_theme'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
