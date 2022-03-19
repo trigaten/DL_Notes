@@ -1,6 +1,5 @@
-FashionMNIST
-__pycache__
 .DS_Store
 _site
 .jekyll-cache
 __pycache__
+build/
