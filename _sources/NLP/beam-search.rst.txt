@@ -5,12 +5,12 @@ Beam Search
   :width: 400
   :alt:
 
-.. figure:: BeamSearch.gif
+.. image:: BeamSearch.gif
    :alt: alt text goes here
    :align: location of caption
    :scale: 50 %
 
-.. figure:: _static/BeamSearch.gif
+.. image:: _static/BeamSearch.gif
    :alt: alt text goes here
    :align: location of caption
    :scale: 50 %
