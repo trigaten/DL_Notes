@@ -1,6 +1,17 @@
 Meta 
 ======
 
+Zipf's Law
+--------------
+.. math::
+
+    frequency * rank = count
+
+.. math::
+
+    frequency = \frac{count}{rank}
+
+
 Evaluating similarity measures 
 -----------------------------------
 
