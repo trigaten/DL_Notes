@@ -2,5 +2,5 @@ Beam Search
 ==============
 
 .. image:: BeamSearch.mp4
-  :scale: 100 %
+  :width: 400
   :alt:
