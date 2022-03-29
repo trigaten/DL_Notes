@@ -14,3 +14,4 @@ Yay!!!
    meta
    n-grams
    evaluating_LMs
+   beam-search
