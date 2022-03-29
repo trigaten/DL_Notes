@@ -213,6 +213,11 @@ Just add k to all counts
 Effect: 
 * Smooths probability, so less super high vals
 
+Bias
+------------
+- Embeddings demonstrate human-like biases (Ex. man - woman = programmer - homemaker)
+- Can be evaluated intrinsically: WEAT (using cosine similarities) and extrinsically: seeing impacts of embeddings in downstream tasks (Ex. "The physician hired the secretary because he/she was overwhelmed by clients")
+
 Excercises
 -------------
 
