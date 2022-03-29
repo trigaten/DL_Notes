@@ -1,16 +1,16 @@
 Beam Search
 ==============
 
-.. image:: BeamSearch.mp4
+.. image:: BeamSearch.gif
   :width: 400
   :alt:
 
-.. figure:: BeamSearch.mp4
+.. figure:: BeamSearch.gif
    :alt: alt text goes here
    :align: location of caption
    :scale: 50 %
 
-.. figure:: _static/BeamSearch.mp4
+.. figure:: _static/BeamSearch.gif
    :alt: alt text goes here
    :align: location of caption
    :scale: 50 %
