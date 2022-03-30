@@ -131,7 +131,7 @@ TF-IDF
 ---------
 
 TF-IDF works towards reducing how much very common words like "the" contribute to word embeddings. 
-TD-IDF has two parts,
+TF-IDF has two parts,
 
 1. TF   
 
