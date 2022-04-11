@@ -1,1 +1,1 @@
-# notes
+# notes on deep learning
