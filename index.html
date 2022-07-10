@@ -191,6 +191,79 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="RL/">
+   RL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="RL/policy_gradients/">
+     Policy Gradients
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="RL/policy_gradients/pg_derivation/">
+       Policy Gradient Derivation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="RL/policy_gradients/reward_to_go/">
+       Reward to Go
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="RL/policy_gradients/rtg_derivation/">
+       Reward to Go Derivation
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="RL/policy_gradients/baselines/">
+       Baselines
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="RL/policy_gradients/baselines/unbiased_state_value_proof/">
+         Unbiased State Value Proof
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="math/">
+   Math
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="math/moore_penrose_pseudoinverse/">
+     Moore Penrose Pseudoinverse
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -394,18 +467,32 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="ML/decision_trees/">Decision Trees</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ML/decision_trees/#decision-tree-from-known-features">Decision Tree from known features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ML/decision_trees/#ways-to-split">Ways to split</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ML/decision_trees/#pruning">Pruning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ML/decision_trees/#pruning">Pruning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ML/decision_trees/#prepruning">Prepruning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ML/decision_trees/#postpruning">Postpruning</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ML/perceptron/">Perceptron</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#voted-perceptron">Voted perceptron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#voted-perceptron">Voted perceptron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ML/perceptron/#problems">Problems</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#average-weighted-perceptron">Average weighted perceptron</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#perceptron-proof">Perceptron proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#perceptron-proof">Perceptron proof</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ML/perceptron/#inspiration">Inspiration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ML/perceptron/#demonstrating-that-w-k-1-w-grows-at-each-iteration">Demonstrating that <span class="math notranslate nohighlight">\(w_{k+1} * w_*\)</span> grows at each iteration</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="ML/perceptron/#practice">Practice</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ML/optimizers/">Optimizers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ML/optimizers/#good-old-sgd">Good old SGD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ML/optimizers/#good-old-sgd">Good old SGD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ML/optimizers/#lr-scheduling">LR scheduling</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="ML/optimizers/#momentum">Momentum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ML/optimizers/#adagrad">Adagrad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ML/optimizers/#adam">Adam</a></li>
@@ -464,7 +551,10 @@ title="Print to PDF"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="NLP/neural_embeddings/">Neural Embeddings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="NLP/neural_embeddings/#skip-gram-with-negative-sampling">Skip gram with negative sampling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NLP/neural_embeddings/#skip-gram-with-negative-sampling">Skip gram with negative sampling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="NLP/neural_embeddings/#weighted-unigram-sampling">Weighted unigram sampling</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/neural_embeddings/#fasttext">Fasttext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/neural_embeddings/#excercises">Excercises</a></li>
 </ul>
@@ -476,7 +566,11 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="NLP/meta/">Meta</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="NLP/meta/#zipf-s-law">Zipf’s Law</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/meta/#evaluating-similarity-measures">Evaluating similarity measures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NLP/meta/#inter-annotator-agreement">Inter annotator agreement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NLP/meta/#inter-annotator-agreement">Inter annotator agreement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="NLP/meta/#basic-probability">Basic probability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NLP/meta/#cohen-s-kappa">Cohen’s Kappa</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/meta/#baselines-for-word-sense-prediction">Baselines for word sense prediction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/meta/#closed-vs-open-vocab">Closed vs Open vocab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NLP/meta/#perplexity">Perplexity</a></li>
@@ -485,8 +579,15 @@ title="Print to PDF"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="NLP/n-grams/">N Grams</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="NLP/n-grams/#smoothing">Smoothing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NLP/n-grams/#backoff">Backoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NLP/n-grams/#smoothing">Smoothing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="NLP/n-grams/#laplace-smoothing">Laplace Smoothing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NLP/n-grams/#recover-adjusted-counts">Recover adjusted counts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NLP/n-grams/#backoff">Backoff</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="NLP/n-grams/#stupid-backoff">Stupid backoff</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="NLP/evaluating_LMs/">Evaluating LMs</a><ul>
@@ -494,6 +595,31 @@ title="Print to PDF"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="NLP/beam_search/">Beam Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="RL/">RL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RL/policy_gradients/">Policy Gradients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="RL/policy_gradients/#what">What</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RL/policy_gradients/#why">Why</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RL/policy_gradients/#explanation">Explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="RL/policy_gradients/pg_derivation/">Policy Gradient Derivation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RL/policy_gradients/reward_to_go/">Reward to Go</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RL/policy_gradients/rtg_derivation/">Reward to Go Derivation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="RL/policy_gradients/rtg_derivation/#sources">Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="RL/policy_gradients/baselines/">Baselines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="RL/policy_gradients/baselines/unbiased_state_value_proof/">Unbiased State Value Proof</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math/">Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math/moore_penrose_pseudoinverse/">Moore Penrose Pseudoinverse</a></li>
 </ul>
 </li>
 </ul>

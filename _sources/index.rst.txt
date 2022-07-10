@@ -22,8 +22,10 @@ Indices and tables
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
 
    ML/index
    NLP/index
+   RL/index
+   math/index
    
