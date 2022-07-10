@@ -8,5 +8,3 @@ Beam Search
 .. image:: BeamSearch.gif
    :alt: alt text goes here
 
-.. image:: _static/BeamSearch.gif
-   :alt: alt text goes here
